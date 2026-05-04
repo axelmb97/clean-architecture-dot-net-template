@@ -1,6 +1,7 @@
 ﻿using Domain.Models.Filters;
+using System.Linq.Dynamic.Core;
 
-namespace Application.Common.Extensions
+namespace Infraestructure.Extensions
 {
     public static class PaginationExtension
     {

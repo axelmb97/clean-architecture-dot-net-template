@@ -1,0 +1,1 @@
+Scaffold-DbContext "server=localhost;port=3306;database=db-name;user=user;password=pass" Pomelo.EntityFrameworkCore.MySql -t "INGRESAR ENTITIES" -Context AppDbContext -f -ContextDir Persistence/Data -OutputDir ../Domain/Entities
