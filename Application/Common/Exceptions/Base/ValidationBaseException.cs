@@ -2,10 +2,10 @@
 
 namespace Application.Common.Exceptions.Base
 {
-    public class ValidationTimeTrackerException : BaseException
+    public class ValidationBaseException : BaseException
     {
         public IEnumerable<ValidationErrorDto> Errors { get; set; }
-        public ValidationTimeTrackerException(IEnumerable<ValidationErrorDto> errors) : base(BuildErrorMessage(errors))
+        public ValidationBaseException(IEnumerable<ValidationErrorDto> errors) : base(BuildErrorMessage(errors))
         {
         }
 

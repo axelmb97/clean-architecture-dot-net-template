@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Application.Common.Resources {
+namespace Presentation.Resources {
     using System;
     
     
@@ -22,24 +22,24 @@ namespace Application.Common.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Messages {
+    public class CodeStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Messages() {
+        internal CodeStrings() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Application.Common.Resources.Messages", typeof(Messages).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Presentation.Resources.CodeStrings", typeof(CodeStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace Application.Common.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,29 +61,20 @@ namespace Application.Common.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The auth cached service was not found..
+        ///   Looks up a localized string similar to 60.
         /// </summary>
-        internal static string AuthCachedServiceNotFound {
+        public static string RetryAfterMinutes {
             get {
-                return ResourceManager.GetString("AuthCachedServiceNotFound", resourceCulture);
+                return ResourceManager.GetString("RetryAfterMinutes", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The user has not access to do this action.
+        ///   Looks up a localized string similar to UserId.
         /// </summary>
-        internal static string UnauthorizeAccessMessage {
+        public static string UserIdClaimName {
             get {
-                return ResourceManager.GetString("UnauthorizeAccessMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The user id was not found..
-        /// </summary>
-        internal static string UserIdNotFoundMessage {
-            get {
-                return ResourceManager.GetString("UserIdNotFoundMessage", resourceCulture);
+                return ResourceManager.GetString("UserIdClaimName", resourceCulture);
             }
         }
     }

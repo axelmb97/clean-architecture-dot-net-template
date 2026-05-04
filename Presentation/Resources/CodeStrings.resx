@@ -117,13 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AuthCachedServiceNotFound" xml:space="preserve">
-    <value>The auth cached service was not found.</value>
+  <data name="RetryAfterMinutes" xml:space="preserve">
+    <value>60</value>
   </data>
-  <data name="UnauthorizeAccessMessage" xml:space="preserve">
-    <value>The user has not access to do this action</value>
-  </data>
-  <data name="UserIdNotFoundMessage" xml:space="preserve">
-    <value>The user id was not found.</value>
+  <data name="UserIdClaimName" xml:space="preserve">
+    <value>UserId</value>
   </data>
 </root>
