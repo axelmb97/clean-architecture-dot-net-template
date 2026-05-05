@@ -7,7 +7,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIG=Release
 WORKDIR /src
 
-COPY ["Presentation/CleanArchitecture.Template.sln", "./"]
+COPY ["CleanArchitecture.Template.sln", "./"]
 
 COPY ["Domain/Domain.csproj", "Domain/"]
 COPY ["Application/Application.csproj", "Application/"]

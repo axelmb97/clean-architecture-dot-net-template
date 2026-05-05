@@ -2,20 +2,20 @@ version: "3.8"
 name: template-app
 
 services:
-  # template-api:
-  #   container_name: template-api
-  #   image: template-api:1.0.0
-  #   restart: unless-stopped
-  #   environment:
-  #     - ASPNETCORE_ENVIRONMENT=Local
-  #     - ASPNETCORE_URLS=http://0.0.0.0:8080
-  #   ports:
-  #     - 8080:8080
-  #   depends_on:
-  #     template-db:
-  #       condition: service_healthy
-  #   networks:
-  #     - template-app-net
+  template-api:
+    container_name: template-api
+    image: ca-template:1.0.0
+    restart: unless-stopped
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Testing
+      - ASPNETCORE_URLS=http://0.0.0.0:8080
+    ports:
+      - 8080:8080
+    depends_on:
+      template-db:
+        condition: service_healthy
+    networks:
+      - template-app-net
 
   template-db:
     image: mysql:8.0
