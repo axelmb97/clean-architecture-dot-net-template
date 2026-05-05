@@ -38,7 +38,7 @@ namespace Application.Common.Behaviours
 
             if (failures.Any())
             {
-                throw new ValidationTimeTrackerException(failures);
+                throw new ValidationBaseException(failures);
             }
 
             return await next();

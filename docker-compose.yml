@@ -1,0 +1,55 @@
+version: "3.8"
+name: template-app
+
+services:
+  # template-api:
+  #   container_name: template-api
+  #   image: template-api:1.0.0
+  #   restart: unless-stopped
+  #   environment:
+  #     - ASPNETCORE_ENVIRONMENT=Local
+  #     - ASPNETCORE_URLS=http://0.0.0.0:8080
+  #   ports:
+  #     - 8080:8080
+  #   depends_on:
+  #     template-db:
+  #       condition: service_healthy
+  #   networks:
+  #     -template-app-net
+
+  template-db:
+    image: mysql:8.0
+    container_name: template-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: Windows74897901
+      MYSQL_DATABASE: template-db
+      MYSQL_USER: template-user
+      MYSQL_PASSWORD: template-password
+    ports:
+      - "3307:3306"
+    volumes:
+      - template-db-volume:/var/lib/mysql
+    networks:
+      - template-app-net
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # template-seq-db:
+  #   image: datalust/seq:2025
+  #   container_name: template-seq-db
+  #   environment:
+  #     - ACCEPT_EULA=Y
+  #   ports:
+  #     - 5341:5341
+  #     - 8083:80
+      
+volumes:
+  template-db-volume:
+
+networks:
+  template-app-net:
+    driver: bridge

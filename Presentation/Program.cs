@@ -43,16 +43,16 @@ var version = Assembly.GetEntryAssembly().GetCustomAttribute<AssemblyInformation
 var environmentName = builder.Environment;
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = $" App Api ", Version = $"{version} - {environmentName}" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = $" Template Api ", Version = $"{version} - {environmentName}" });
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     c.IncludeXmlComments(xmlPath);
 
-    c.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme
+    c.AddSecurityDefinition("Template", new OpenApiSecurityScheme
     {
         Name = "Authorization",
         Type = SecuritySchemeType.ApiKey,
-        Scheme = "ApiKey",
+        Scheme = "Template",
         BearerFormat = "JWT",
         In = ParameterLocation.Header,
         Description = "Enter Bearer [space] ant then your token in the text input below"
@@ -66,7 +66,7 @@ builder.Services.AddSwaggerGen(c =>
                             Reference = new OpenApiReference
                             {
                                 Type = ReferenceType.SecurityScheme,
-                                Id = "ApiKey"
+                                Id = "Template"
                             }
                         },
                         new string[] { }
@@ -97,10 +97,10 @@ var tokenValidationParameters = new TokenValidationParameters
 
 builder.Services.AddAuthentication(o =>
 {
-    o.DefaultAuthenticateScheme = "ApiKey";
-    o.DefaultChallengeScheme = "ApiKey";
+    o.DefaultAuthenticateScheme = "Template";
+    o.DefaultChallengeScheme = "Template";
 })
-.AddJwtBearer("ApiKey", x =>
+.AddJwtBearer("Template", x =>
 {
     x.RequireHttpsMetadata = false;
     x.TokenValidationParameters = tokenValidationParameters;
