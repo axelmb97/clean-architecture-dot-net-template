@@ -1,7 +1,10 @@
 ﻿using Application.Common.Abstractions.Services;
+using Application.Common.Dtos.Base;
 using Domain.Models.Base;
+using Domain.Repositories;
 using Infraestructure.Models.Options;
 using Infraestructure.Persistence.Data;
+using Infraestructure.Persistence.Repositories;
 using Infraestructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -19,6 +22,7 @@ namespace Infraestructure
 
             // Repositories and Services Injections
             services.AddScoped<IAuthCachedService, AuthCachedService>();
+            services.AddScoped<IExamplesRepository, ExamplesRepository>();
 
             // Database Context Configuration
             services.AddDbContext<AppDbContext>((serviceProvider, options) =>
@@ -28,7 +32,7 @@ namespace Infraestructure
 
             // For AutoMapper Configuration
 
-            var appplicationAssembly = typeof(BaseModel).Assembly;
+            var applicationAssembly = typeof(BaseDto).Assembly;
 
             services.AddAutoMapper(mc =>
             {
@@ -36,7 +40,7 @@ namespace Infraestructure
 
                 mc.ShouldMapMethod = m =>
                     !m.IsDefined(typeof(System.Runtime.CompilerServices.ExtensionAttribute), false);
-            }, appplicationAssembly);
+            }, applicationAssembly);
 
             return services;
         }

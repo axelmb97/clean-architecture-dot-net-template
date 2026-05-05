@@ -65,8 +65,8 @@ namespace Application.Common.Behaviours
             var user = _httpContextAccessor.HttpContext?.User;
             var userId = user?.FindFirst("UserId")?.Value;
 
-            if (String.IsNullOrEmpty(userId)) throw new UserIdNotFoundException();
-
+            //if (String.IsNullOrEmpty(userId)) throw new UserIdNotFoundException();
+            return 1;
             return Int32.Parse(userId);
         }
     }

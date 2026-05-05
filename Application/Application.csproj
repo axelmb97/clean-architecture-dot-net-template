@@ -10,7 +10,6 @@
     <Folder Include="Common\Abstractions\Strategies\" />
     <Folder Include="Common\Abstractions\Templates\" />
     <Folder Include="Common\Extensions\" />
-    <Folder Include="Common\Mappers\" />
     <Folder Include="Feature\Commands\" />
     <Folder Include="Feature\Dtos\" />
     <Folder Include="Feature\Queries\" />
